@@ -1,0 +1,39 @@
+server:
+  servlet:
+    context-path: /onboarding/api
+
+spring:
+  application:
+    name: onboarding-service
+  sql:
+    init:
+      mode: always
+  datasource:
+    url: jdbc:postgresql://localhost:5432/kubix-portal
+    username: postgres
+    password: postgres
+  logging:
+    level:
+      io.swagger: OFF
+      springfox: OFF
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: update
+        show_sql: false
+
+
+application-version: 1.0
+
+springdoc:
+  enable-native-support: true
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core: DEBUG
