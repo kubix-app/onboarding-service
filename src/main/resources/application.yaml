@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: onboarding
+  sql:
+    init:
+      mode: always
+  datasource:
+    url: jdbc:postgresql://localhost:5432/kubix-portal
+    username: postgres
+    password: postgres
+  logging:
+    level:
+      io.swagger: OFF
+      springfox: OFF
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: update
+        show_sql: false
+    hibernate:
+      ddl-auto: update
+
+server:
+  servlet:
+    context-path: /onboarding/api
+
+application-version: 1.0
+
+springdoc:
+  enable-native-support: true
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core: DEBUG
+
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 86400000
+      refresh-token:
+        expiration: 604800000
